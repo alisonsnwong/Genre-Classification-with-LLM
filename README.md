@@ -1,4 +1,4 @@
-# Genre Classification with LLM
+# Genre Classification with Google BERT Model
 
 For this project, I performed genre classification of book blurbs with a fine-tuned Google BERT (Bidirectional Encoder Representations from Transformers) Model. The model achieved an overall classification accuracy of 94% with balanced F1 scores across all genres. 
 
