@@ -8,7 +8,7 @@ For this project, I performed genre classification of book blurbs with a fine-tu
 
 :robot: **Model**: google-bert/bert-base-uncased (available on [HuggingFace](https://huggingface.co/google-bert/bert-base-uncased))
 
-### Summary of steps:
+## Summary of steps:
 1. **Data Preprocessing**: Loaded and processed a dataset of book blurbs, converting genre strings into unique numerical labels for model training. Created a Hugging Face Dataset object for efficient data handling.
 
 2. **Model Fine-Tuning**: Loaded the pre-trained BERT model. Set up label mappings and prepared the dataset for training by tokenizing text data. Split the dataset into training and testing sets. Defined and applied a data collator for dynamic padding.
