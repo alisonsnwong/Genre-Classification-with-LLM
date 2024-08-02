@@ -13,7 +13,20 @@ For this project, I performed genre classification of book blurbs with a fine-tu
 
 2. **Model Fine-Tuning**: Loaded the pre-trained BERT model. Set up label mappings and prepared the dataset for training by tokenizing text data. Split the dataset into training and testing sets. Defined and applied a data collator for dynamic padding.
 
+* Padding: to make sure each sequence in a batch is the same length - add 0's to sequence till max length, attention mask of padded tokens are 0's
+* Truncation: to remove tokens from sequences longer than the context window size
+
 3. **Model Training Setup**:: Defined training arguments including batch size, learning rate, number of epochs, warmup steps, and weight decay. Configured metrics (accuracy and F1) to monitor model performance. Initialized the Hugging Face Trainer with the model, tokenizer, data collator, training arguments, datasets, and early stopping callback.
+
+* Batch size: no. training examples/testing examples used in one iteration 
+* Learning rate: step size at each iteration while moving towards a min of the loss function in gradient descent
+* No. epochs: no. times training dataset will be passed through the model during training
+* Warmup steps: help stabilize a model’s final parameters by gradually increasing the learning rate over a set number of steps
+* Weight decay: helps prevent overfitted models by keeping model weights from growing too large
+
+> [!NOTE]
+> Due to limitations in compute units while training the BERT model, I have adjusted several hyperparameters.
+> Decreased batch size, no. epochs to shorten memory usage and training time. Increased learning rate to help model converge faster.
 
 4. **Model Training**: Trained the BERT model for 5 epochs with early stopping if the model did not improve for 3 consecutive epochs. Achieved increasing accuracy and F1 scores with each epoch. Saved the final fine-tuned model.
 
