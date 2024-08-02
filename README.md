@@ -25,7 +25,7 @@ For this project, I performed genre classification of book blurbs with a fine-tu
 * Weight decay: helps prevent overfitted models by keeping model weights from growing too large
 
 > [!NOTE]
-> Due to limitations in compute units while training the BERT model, I have adjusted several hyperparameters.
+> Due to limitations in compute units while training the BERT model, I had to adjust several hyperparameters from the typical range.
 > Decreased batch size, no. epochs to shorten memory usage and training time. Increased learning rate to help model converge faster.
 
 4. **Model Training**: Trained the BERT model for 5 epochs with early stopping if the model did not improve for 3 consecutive epochs. Achieved increasing accuracy and F1 scores with each epoch. Saved the final fine-tuned model.
